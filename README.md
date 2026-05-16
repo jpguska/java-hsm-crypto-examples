@@ -10,20 +10,26 @@ Demonstra operarações do HSM via código para realizar operações criptográf
 
 Este projeto foi desenvolvido como parte de atividades práticas na matéria de Segurança Computacional (UTFPR).
 
-## Implementações
+## 🚀 Implementações
 
-### 1. Cifragem Simétrica (`CifradorAESCBC.java`)
+### 1. Geração de Hash (`GenerateHash.java`)
+Demonstra o cálculo de resumos criptográficos para o hardware de segurança.
+* Leitura de entrada de dados dinâmica fornecida pelo usuário.
+* Geração de hash utilizando o algoritmo **SHA-256** processado internamente pelo HSM.
+* Conversão segura e formatação do array de bytes resultante para string **Hexadecimal**.
+
+### 2. Cifragem Simétrica (`CifradorAESCBC.java`)
 Demonstra a criação de chaves simétricas e cifragem de dados.
 * Geração de chave **AES-128** nativa no HSM.
 * Uso de IV (Initialization Vector) aleatório gerado com segurança criptográfica (`api.getRand(16)`).
 * Cifragem em modo **CBC** com preenchimento **PKCS#5**.
 
-### 2. Troca de Chaves por Curvas Elípticas (`EcdhKeyExchange.java`)
+### 3. Troca de Chaves por Curvas Elípticas (`EcdhKeyExchange.java`)
 Simula um cenário de negociação de chaves entre Cliente e Servidor usando criptografia assimétrica.
 * Criação de pares de chaves baseados em Curvas Elípticas (**SECP128R1**).
 * Execução do algoritmo **ECDH X9.63** com hash **SHA-256** para derivar uma chave de sessão compartilhada e temporária de forma segura.
 
-### 3. Protocolo de Transporte de Chaves (`KeyTransportProtocol.java`)
+### 4. Protocolo de Transporte de Chaves (`KeyTransportProtocol.java`)
 Implementa um fluxo completo de encapsulamento e transporte seguro de chaves de sessão.
 * Geração de um segredo aleatório (32 bytes).
 * Cifragem assimétrica do segredo utilizando **RSA-2048**.
